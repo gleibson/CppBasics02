@@ -22,36 +22,32 @@ int main()
 		std::cout << "reason value " "\n";
 		std::cin >> reason;
 
-			if (std::cin.fail())
-			{
-				std::cout << "Error in the insert values ";
-				std::cin.clear();
-				std::cin.ignore(std::numeric_limits<int>::max(), '\n');
-			}
+		if (std::cin.fail())
+		{
+			std::cout << "Error in the insert values ";
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<int>::max(), '\n');
+
 			if (final > initial)
 				std::swap(initial, final);
 
 			if (reason < 0)
-			   reason = -reason;
-
-			else
-			{
-				for (int sum = 0; initial <= final; initial++)
+				reason = -reason;
+		   }
+		for (int sum = 0; initial <= final; initial = initial + reason)
 				{
 					sum = sum + initial;
 					std::cout << "Result of Sum: " << sum << "\n";
 				}
-				
-			}
-			
+	
 			std::cout << "Are you Want to Continue?";
 			std::cin >> y || n;
-				if (y)
-					continue;
-				else
-					break;
-
-		}
-                return 0;
+			if (y)
+				continue;
+			else
+				break;
+		
+ 	}
+       return 0;
 }
 
